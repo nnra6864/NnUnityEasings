@@ -59,9 +59,9 @@
 
 using UnityEngine;
 
-namespace NnUtils.Modules.Easings
+namespace NnUnityEasings
 {
-    public static class EasingFunctions
+    public static class Easings
     {
         private const float NaturalLOGOf2 = 0.693147181f;
 

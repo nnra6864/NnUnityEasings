@@ -1,6 +1,6 @@
-namespace NnUtils.Modules.Easings
+namespace NnUnityEasings
 {
-    public enum EasingType
+    public enum Easing
     {
         Linear = 0,
         SineIn,
