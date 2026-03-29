@@ -875,10 +875,9 @@ namespace NnUnityEasings
                                Mathf.Sin(Mathf.PI * value * (2.5f * value * value * value + 0.2f)) +
                                value
                                / 5f);
-
         }
 
-        public static float Ease(float value, EasingType type, float start = 0, float end = 1)
+        public static float Ease(float value, Easing type, float start = 0, float end = 1)
             => GetEasingFunction(type)(value, start, end);
 
         public delegate float Function(float v, float s = 0, float e = 1);
@@ -889,41 +888,41 @@ namespace NnUnityEasings
         /// </summary>
         /// <param name="easingFunction">The enum associated with the type function.</param>
         /// <returns>The type function</returns>
-        public static Function GetEasingFunction(EasingType easingFunction) =>
-            easingFunction switch
+        public static Function GetEasingFunction(Easing easing) =>
+            easing switch
             {
-                EasingType.Linear => Linear,
-                EasingType.SineIn => SineIn,
-                EasingType.SineOut => SineOut,
-                EasingType.SineInOut => SineInOut,
-                EasingType.QuadIn => QuadIn,
-                EasingType.QuadOut => QuadOut,
-                EasingType.QuadInOut => QuadInOut,
-                EasingType.CubicIn => CubicIn,
-                EasingType.CubicOut => CubicOut,
-                EasingType.CubicInOut => CubicInOut,
-                EasingType.QuartIn => QuartIn,
-                EasingType.QuartOut => QuartOut,
-                EasingType.QuartInOut => QuartInOut,
-                EasingType.QuintIn => QuintIn,
-                EasingType.QuintOut => QuintOut,
-                EasingType.QuintInOut => QuintInOut,
-                EasingType.ExpoIn => ExpoIn,
-                EasingType.ExpoOut => ExpoOut,
-                EasingType.ExpoInOut => ExpoInOut,
-                EasingType.CircIn => CircIn,
-                EasingType.CircOut => CircOut,
-                EasingType.CircInOut => CircInOut,
-                EasingType.BackIn => BackIn,
-                EasingType.BackOut => BackOut,
-                EasingType.BackInOut => BackInOut,
-                EasingType.ElasticIn => ElasticIn,
-                EasingType.ElasticOut => ElasticOut,
-                EasingType.ElasticInOut => ElasticInOut,
-                EasingType.BounceIn => BounceIn,
-                EasingType.BounceOut => BounceOut,
-                EasingType.BounceInOut => BounceInOut,
-                EasingType.Spring => Spring,
+                Easing.Linear => Linear,
+                Easing.SineIn => SineIn,
+                Easing.SineOut => SineOut,
+                Easing.SineInOut => SineInOut,
+                Easing.QuadIn => QuadIn,
+                Easing.QuadOut => QuadOut,
+                Easing.QuadInOut => QuadInOut,
+                Easing.CubicIn => CubicIn,
+                Easing.CubicOut => CubicOut,
+                Easing.CubicInOut => CubicInOut,
+                Easing.QuartIn => QuartIn,
+                Easing.QuartOut => QuartOut,
+                Easing.QuartInOut => QuartInOut,
+                Easing.QuintIn => QuintIn,
+                Easing.QuintOut => QuintOut,
+                Easing.QuintInOut => QuintInOut,
+                Easing.ExpoIn => ExpoIn,
+                Easing.ExpoOut => ExpoOut,
+                Easing.ExpoInOut => ExpoInOut,
+                Easing.CircIn => CircIn,
+                Easing.CircOut => CircOut,
+                Easing.CircInOut => CircInOut,
+                Easing.BackIn => BackIn,
+                Easing.BackOut => BackOut,
+                Easing.BackInOut => BackInOut,
+                Easing.ElasticIn => ElasticIn,
+                Easing.ElasticOut => ElasticOut,
+                Easing.ElasticInOut => ElasticInOut,
+                Easing.BounceIn => BounceIn,
+                Easing.BounceOut => BounceOut,
+                Easing.BounceInOut => BounceInOut,
+                Easing.Spring => Spring,
                 _ => null
             };
 
@@ -933,41 +932,41 @@ namespace NnUnityEasings
         /// </summary>
         /// <param name="easingFunction"></param>
         /// <returns>The derivative function</returns>
-        public static Function GetEasingFunctionDerivative(EasingType easingFunction) =>
-            easingFunction switch
+        public static Function GetEasingFunctionDerivative(Easing easing) =>
+            easing switch
             {
-                EasingType.Linear => LinearD,
-                EasingType.SineIn => SineInD,
-                EasingType.SineOut => SinceOutD,
-                EasingType.SineInOut => SineInOutD,
-                EasingType.QuadIn => QuadInD,
-                EasingType.QuadOut => QuadOutD,
-                EasingType.QuadInOut => QuadInOutD,
-                EasingType.CubicIn => CubicInD,
-                EasingType.CubicOut => CubicOutD,
-                EasingType.CubicInOut => CubicInOutD,
-                EasingType.QuartIn => QuartInD,
-                EasingType.QuartOut => QuartOutD,
-                EasingType.QuartInOut => QuartInOutD,
-                EasingType.QuintIn => QuintInD,
-                EasingType.QuintOut => QuintOutD,
-                EasingType.QuintInOut => QuintInOutD,
-                EasingType.ExpoIn => ExpoInD,
-                EasingType.ExpoOut => ExpoOutD,
-                EasingType.ExpoInOut => ExpoInOutD,
-                EasingType.CircIn => CircInD,
-                EasingType.CircOut => CircOutD,
-                EasingType.CircInOut => CircInOutD,
-                EasingType.BackIn => BackInD,
-                EasingType.BackOut => BackOutD,
-                EasingType.BackInOut => BackInOutD,
-                EasingType.ElasticIn => ElasticInD,
-                EasingType.ElasticOut => ElasticOutD,
-                EasingType.ElasticInOut => ElasticInOutD,
-                EasingType.BounceIn => BounceInD,
-                EasingType.BounceOut => BounceOutD,
-                EasingType.BounceInOut => BounceInOutD,
-                EasingType.Spring => SpringD,
+                Easing.Linear => LinearD,
+                Easing.SineIn => SineInD,
+                Easing.SineOut => SinceOutD,
+                Easing.SineInOut => SineInOutD,
+                Easing.QuadIn => QuadInD,
+                Easing.QuadOut => QuadOutD,
+                Easing.QuadInOut => QuadInOutD,
+                Easing.CubicIn => CubicInD,
+                Easing.CubicOut => CubicOutD,
+                Easing.CubicInOut => CubicInOutD,
+                Easing.QuartIn => QuartInD,
+                Easing.QuartOut => QuartOutD,
+                Easing.QuartInOut => QuartInOutD,
+                Easing.QuintIn => QuintInD,
+                Easing.QuintOut => QuintOutD,
+                Easing.QuintInOut => QuintInOutD,
+                Easing.ExpoIn => ExpoInD,
+                Easing.ExpoOut => ExpoOutD,
+                Easing.ExpoInOut => ExpoInOutD,
+                Easing.CircIn => CircInD,
+                Easing.CircOut => CircOutD,
+                Easing.CircInOut => CircInOutD,
+                Easing.BackIn => BackInD,
+                Easing.BackOut => BackOutD,
+                Easing.BackInOut => BackInOutD,
+                Easing.ElasticIn => ElasticInD,
+                Easing.ElasticOut => ElasticOutD,
+                Easing.ElasticInOut => ElasticInOutD,
+                Easing.BounceIn => BounceInD,
+                Easing.BounceOut => BounceOutD,
+                Easing.BounceInOut => BounceInOutD,
+                Easing.Spring => SpringD,
                 _ => null
             };
     }
