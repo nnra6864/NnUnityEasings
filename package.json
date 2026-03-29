@@ -1,0 +1,19 @@
+{
+	"name": "com.nnra6864.easings",
+	"version": "1.0.0",
+	"displayName": "Easings",
+	"description": "Collection of easing functions",
+	"keywords": [
+		"nn",
+		"easing",
+		"easings",
+		"utils"
+	],
+	"author": {
+		"name": "nnra6864",
+		"email": "nnra2210@gmail.com",
+		"url": "https://nnra6864.github.io/nnra/"
+	}
+}
+
+
